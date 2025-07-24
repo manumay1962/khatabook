@@ -15,6 +15,10 @@ Easily **create**, **view**, **edit**, and **delete** records (“Hisaabs”) us
 - 🔥 Simple & responsive UI with Tailwind CSS
 
 ---
+## 📸 Screenshots
+<img width="1884" height="906" alt="Screenshot 2025-07-24 154945" src="https://github.com/user-attachments/assets/02ebca33-c7ac-42f8-9c55-6ca9648dc710" />
+
+
 
 ## 🧩 Tech Stack
 
