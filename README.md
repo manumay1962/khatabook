@@ -97,15 +97,11 @@ To deploy your full-stack app:
 
 ---
 
-## 📝 License
 
-MIT License. See the [LICENSE](LICENSE) file for details.
-
----
 
 ## 👋 Author
 
-**Manu May** – Full-stack Web Developer  
+**ManuMay** – Full-stack Web Developer  
 GitHub: [@manumay1962](https://github.com/manumay1962)
 
 ---
