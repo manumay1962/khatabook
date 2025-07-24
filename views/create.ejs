@@ -2,35 +2,67 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/public/css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create New Hisaab | Khaatabook</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
-<body>
-    <main class="w-full h-screen bg-zinc-100 font-['Helvetica']">
-        <nav class="flex px-10 justify-between py-5">
-            <h3 class="text-2xl tracking-tight">Khaatabook</h3>
-            <div class="navlinks flex gap-5">
-                <a class="tracking-tight" href="/">Home</a>
-                <a class="tracking-tight" href="/create">Create New Hisaab</a>
-            </div>
-        </nav>
-        <div class="px-10 hisaabs">
-            <h3 class="capitalize text-2xl font-medium mb-5 mt-10 tracking-tight">create new hisaab</h3>
-            <form class="" action="/createhisaab" method="post">
-                <input name="title" class="text-md px-3 py-2 w-1/2 mb-5 rounded-md bg-zinc-200" type="text"
-                    placeholder="Shopping ka hisaab, ghar ka kharch...">
-                <textarea name="content" class="block w-1/2 px-3 py-2 resize-none bg-zinc-200 rounded-md min-h-96"
-                    placeholder="write your hisaab." name=""></textarea>
-                <input type="submit" class="block mt-5 px-5 py-3 bg-blue-500 text-white rounded-md"
-                    value="Create Hisaab">
-            </form>
+<body class="bg-[#f9fafc] font-['Inter'] text-gray-800">
+  <main class="min-h-screen w-full">
+    
+    <!-- Navbar -->
+    <nav class="flex justify-between items-center px-8 py-6 bg-white shadow-sm">
+      <h3 class="text-3xl font-bold text-indigo-600">Khaatabook</h3>
+      <div class="flex gap-6 text-base font-medium">
+        <a href="/" class="text-gray-700 hover:text-indigo-600 transition">Home</a>
+        <a href="/create" class="text-gray-700 hover:text-indigo-600 transition">Create New Hisaab</a>
+      </div>
+    </nav>
+
+    <!-- Form Section -->
+    <section class="px-8 py-12 max-w-4xl mx-auto">
+      <h3 class="text-2xl font-semibold mb-8 tracking-tight text-gray-800">Create New Hisaab</h3>
+
+      <form action="/createhisaab" method="post" class="space-y-6">
+        <!-- Title Input -->
+        <div>
+          <label for="title" class="block text-sm font-medium text-gray-700 mb-1">Title</label>
+          <input
+            name="title"
+            type="text"
+            id="title"
+            required
+            class="w-full px-4 py-3 text-base bg-zinc-100 rounded-md border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none placeholder:text-gray-400"
+            placeholder="Shopping ka hisaab, ghar ka kharch..."
+          />
         </div>
-    </main>
+
+        <!-- Content Textarea -->
+        <div>
+          <label for="content" class="block text-sm font-medium text-gray-700 mb-1">Details</label>
+          <textarea
+            name="content"
+            id="content"
+            rows="12"
+            required
+            class="w-full px-4 py-3 text-base bg-zinc-100 rounded-md border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none placeholder:text-gray-400 resize-none"
+            placeholder="Write your hisaab here..."
+          ></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <div>
+          <input
+            type="submit"
+            value="Create Hisaab"
+            class="bg-indigo-600 text-white font-semibold px-6 py-3 rounded-md hover:bg-indigo-700 transition"
+          />
+        </div>
+      </form>
+    </section>
+  </main>
 </body>
 
 </html>

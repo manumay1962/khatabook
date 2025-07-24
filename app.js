@@ -19,7 +19,33 @@ app.get('/create',(req,res)=>{
     res.render("create")
 })
 app.get('/edit/:filename',(req,res)=>{
-    res.render("edit")
+    fs.readFile(`./hisaab/${req.params.filename}`,"utf8",function(err,filedata){
+        if(err)return res.status(500).send(err);
+            res.render("edit",{filedata,filename:req.params.filename})
+    })
+
+}) 
+app.post('/update/:filename',(req,res)=>{
+    fs.writeFile(`./hisaab/${req.params.filename}`,req.body.content,function(err,filedata){
+        if(err)return res.status(500).send(err);
+            res.redirect("/")
+    })
+
+}) 
+
+app.get('/delete/:filename',(req,res)=>{
+    fs.unlink(`./hisaab/${req.params.filename}`,function(err){
+        res.redirect("/")
+    })
+})
+
+
+app.get('/hisaab/:filename',(req,res)=>{
+    fs.readFile(`./hisaab/${req.params.filename}`,"utf-8",function(err,filedata){
+        if(err)return res.status(500).send(err);
+            res.render("hisaab",{filedata,filename:req.params.filename})
+    })
+
 }) 
 
 app.post('/createhisaab',function(req,res){

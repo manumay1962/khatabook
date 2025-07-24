@@ -2,35 +2,63 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/public/css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Hisaab | Khaatabook</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
-<body>
-    <main class="w-full h-screen bg-zinc-100 font-['Helvetica']">
-        <nav class="flex px-10 justify-between py-5">
-            <h3 class="text-2xl tracking-tight">Khaatabook</h3>
-            <div class="navlinks flex gap-5">
-                <a class="tracking-tight" href="/">Home</a>
-                <a class="tracking-tight" href="/create">Create New Hisaab</a>
-            </div>
-        </nav>
-        <div class="px-10 hisaabs">
-            <h3 class="text-2xl font-medium mb-5 mt-10 tracking-tight">you're editing hisaab of <span
-                    class="text-blue-500">12-03-2024</span> date</h3>
-            <form class="" action="/update" method="post">
-                <textarea class="block w-1/2 px-3 py-2 resize-none bg-zinc-200 rounded-md min-h-96 outline-none"
-                    placeholder="write your hisaab."
-                    name="content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates dolorum consectetur molestias nulla!</textarea>
-                <input type="submit" class="block mt-5 px-5 py-3 bg-blue-500 text-white rounded-md"
-                    value="Update Hisaab">
-            </form>
-        </div>
-    </main>
+<body class="bg-[#f9fafc] font-['Inter'] text-gray-800">
+  <main class="min-h-screen w-full">
+
+    <!-- Navbar -->
+    <nav class="flex justify-between items-center px-8 py-6 bg-white shadow-sm sticky top-0 z-50">
+      <h3 class="text-3xl font-bold text-indigo-600">Khaatabook</h3>
+      <div class="flex gap-6 text-base font-medium">
+        <a href="/" class="text-gray-700 hover:text-indigo-600 transition">Home</a>
+        <a href="/create" class="text-gray-700 hover:text-indigo-600 transition">Create New Hisaab</a>
+      </div>
+    </nav>
+
+    <!-- Edit Section -->
+    <section class="px-6 md:px-12 lg:px-24 pt-12 pb-20">
+      <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-md p-8">
+
+        <!-- Heading -->
+        <h2 class="text-2xl font-bold mb-4">
+          You’re editing Hisaab of
+          <span class="text-indigo-600"><%= filename.split(".")[0] %></span>
+        </h2>
+        <p class="text-sm text-gray-500 mb-8">📅 Make your changes and save below</p>
+
+        <!-- Form -->
+        <form action="/update/<%= filename %>" method="post" class="space-y-6">
+          <div>
+            <label for="content" class="block text-sm font-medium text-gray-700 mb-1">Details</label>
+            <textarea
+              name="content"
+              id="content"
+              rows="14"
+              required
+              class="w-full px-4 py-3 text-base bg-zinc-100 rounded-md border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none resize-none placeholder:text-gray-400"
+              placeholder="Write your hisaab here..."
+            ><%= filedata %></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <div>
+            <input
+              type="submit"
+              value="Update Hisaab"
+              class="bg-indigo-600 text-white font-semibold px-6 py-3 rounded-md hover:bg-indigo-700 transition"
+            />
+          </div>
+        </form>
+
+      </div>
+    </section>
+  </main>
 </body>
 
 </html>
