@@ -18,6 +18,12 @@ Easily **create**, **view**, **edit**, and **delete** records (“Hisaabs”) us
 ## 📸 Screenshots
 <img width="1884" height="906" alt="Screenshot 2025-07-24 154945" src="https://github.com/user-attachments/assets/02ebca33-c7ac-42f8-9c55-6ca9648dc710" />
 
+<img width="1816" height="904" alt="Screenshot 2025-07-24 155007" src="https://github.com/user-attachments/assets/c53ee02a-a4d6-4a41-a4dc-2a38214af6fc" />
+
+<img width="1886" height="858" alt="Screenshot 2025-07-24 155038" src="https://github.com/user-attachments/assets/5057f7e4-eb4f-4a75-a434-47e7373d56c2" />
+
+
+
 
 
 ## 🧩 Tech Stack
